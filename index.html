@@ -1,0 +1,323 @@
+<!doctype html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>مستندات فریم ورک لاراول - نسخه 9.x</title>
+
+	<meta name="description" content="لطفا توجه داشته باشید که این مستندات فارسی ترجمه کلمه به کلمه خود فریم ورک لاراول نیست و مترجم با توجه به نیاز و ضرورت و تجربه و تخصص برای آسان سازی ترجمه، سلایق خود را نیز در آن اعمال کرده است.
+این مستندات برای آشنایی برنامه نویسان تازه کار و توضیح مفاهیم و پایه، اصول و زیر ساخت ترجمه شده است">
+	<meta name="author" content="مترجم: مهدی پیشگوی">
+	<meta name="copyright" content="مترجم: مهدی پیشگوی">
+	<meta name="generator" content="Documenter v2.0 https://evp.to/documenter">
+	<meta name="date" content="2022-07-11T00:00:00+02:00">
+
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+
+
+
+	<script src="assets/js/jquery.js"></script>
+
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+
+	<style>
+		html{background-color:#171923;color:#FFFFFF;}
+		::-moz-selection{background:#000000;color:#FFFFFF;}
+		::selection{background:#000000;color:#FFFFFF;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#F38630;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			background-image: -moz-linear-gradient(top, #B9F2EF, #9CCCC9);
+			background-image: -ms-linear-gradient(top, #B9F2EF, #9CCCC9);
+			background-image: -webkit-gradient(linear, 0 0, 0 B9F2EF%, from(#13151D), to(#9CCCC9));
+			background-image: -webkit-linear-gradient(top, #B9F2EF, #9CCCC9);
+			background-image: -o-linear-gradient(top, #B9F2EF, #9CCCC9);
+			background-image: linear-gradient(top, #B9F2EF, #9CCCC9);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B9F2EF', endColorstr='#9CCCC9', GradientType=0);
+			border-color: #9CCCC9 #9CCCC9 #bfbfbf;
+			color:#3D220C;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+			border-color: #B9F2EF #B9F2EF #bfbfbf;
+			background-color: #9CCCC9;
+		}
+		hr{border-top:1px solid #171923;border-bottom:1px solid #171923;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#13151D;color:#FFFFFF;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #13151D;-moz-text-shadow:1px 1px 0px #13151D;text-shadow:1px 1px 0px #13151D;}
+		#documenter_sidebar ul{border-top:1px solid #13151D;}
+		#documenter_sidebar ul a{border-top:1px solid #13151D;border-bottom:1px solid #13151D;color:#FFFFFF;}
+		#documenter_sidebar ul a:hover{background:#000000;color:#FFFFFF;border-top:1px solid #000000;}
+		#documenter_sidebar ul a.current{background:#000000;color:#FFFFFF;border-top:1px solid #000000;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+
+</head>
+<body class="documenter-project--">
+<div id="documenter_sidebar">
+	<a href="#documenter_cover" id="documenter_logo"></a>
+	<ul id="documenter_nav">
+		<li><a class="current" href="#documenter_cover">Start</a></li>
+
+		<li><a href="#" title="مقدمه">مقدمه</a></li>
+		<li><a href="#" title="شروع کار">شروع کار</a></li>
+		<li><a href="#" title="مفاهیم معماری">مفاهیم معماری</a></li>
+		<li><a href="#" title="مقدمات اولیه">مقدمات اولیه</a></li>
+		<li><a href="#" title="حفاری عمیق">حفاری عمیق</a></li>
+		<li><a href="#" title="امنیت">امنیت</a></li>
+		<li><a href="#" title="بانک اطلاعاتی">بانک اطلاعاتی</a></li>
+		<li><a href="#" title="بانک اطلاعاتی شیء گرا">بانک اطلاعاتی شیء گرا</a></li>
+		<li><a href="#" title="تست">تست</a></li>
+		<li><a href="#" title="پکیج ها">پکیج ها</a></li>
+		<li><a href="#test" title="test">test</a></li>
+
+	</ul>
+	<div id="documenter_copyright">Copyright مترجم: مهدی پیشگوی 2022<br>
+		made with the <a href="https://evp.to/documenter">Documenter v2.0</a>
+	</div>
+</div>
+<div id="documenter_content">
+	<section id="documenter_cover">
+		<h1>مستندات فریم ورک لاراول</h1>
+		<h2>نسخه 9.x</h2>
+		<div id="documenter_buttons">
+
+		</div>
+		<hr>
+		<ul>
+			<li>created: 03/10/2011</li>
+			<li>latest update: 07/11/2022</li>
+			<li>by: مترجم: مهدی پیشگوی</li>
+			<li><a href=""></a></li>
+			<li>email: <a href="mailto:&#115;&#111;&#109;&#101;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">&#115;&#111;&#109;&#101;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109;</a></li>
+		</ul>
+		<p>از اینکه این مستندات را بین برنامه نویسان فارسی زبان به اشتراک میگذارید از شما ممنونیم ❤️</p>
+	</section>
+
+	<section id="">
+		<div class="page-header"><h3>مقدمه</h3><hr class="notop"></div>
+		<p>
+			یادداشت های انتشار</p>
+		<p>
+			راهنمای آپگرید</p>
+		<p>
+			راهنمای مشارکت</p>
+	</section>
+	<section id="">
+		<div class="page-header"><h3>شروع کار</h3><hr class="notop"></div>
+		<p>
+			نصب و راه اندازی</p>
+		<p>
+			پیکربندی</p>
+		<p>
+			ساختار درختی</p>
+		<p>
+			فرانت اند</p>
+		<p>
+			کیتهای شروع</p>
+		<p>
+			گسترش</p>
+	</section>
+	<section id="">
+		<div class="page-header"><h3>مفاهیم معماری</h3><hr class="notop"></div>
+		<p>
+			درخواست چرخه حیات</p>
+		<p>
+			سرویس کانتینر</p>
+		<p>
+			سرویس پرووایدرها</p>
+		<p>
+			فسادها</p>
+	</section>
+	<section id="">
+		<div class="page-header"><h3>مقدمات اولیه</h3><hr class="notop"></div>
+		<p>
+			روتینگ</p>
+		<p>
+			میدل ور</p>
+		<p>
+			حفاطت در CSRF</p>
+		<p>
+			کنترلرها</p>
+		<p>
+			رکوئست ها</p>
+		<p>
+			ریسپانس ها</p>
+		<p>
+			ویو ها</p>
+		<p>
+			تمپلیت های blade</p>
+		<p>
+			بسته بندی Assetها</p>
+		<p>
+			تولید آدرس</p>
+		<p>
+			سشن</p>
+		<p>
+			ولیدیشن</p>
+		<p>
+			هندل خطاها</p>
+		<p>
+			واقعه نگاری</p>
+	</section>
+	<section id="">
+		<div class="page-header"><h3>حفاری عمیق</h3><hr class="notop"></div>
+		<p>
+			کنسول عمیق</p>
+		<p>
+			برودکستینگ</p>
+		<p>
+			کش</p>
+		<p>
+			کالکشن ها</p>
+		<p>
+			قراردادها</p>
+		<p>
+			رویدادها</p>
+		<p>
+			ذخیره سازی فایل</p>
+		<p>
+			کمک کننده ها</p>
+		<p>
+			سرویس گیرنده Http</p>
+		<p>
+			محلی سازی</p>
+		<p>
+			ایمیل</p>
+		<p>
+			نوتیفیکیشن ها</p>
+		<p>
+			توسعه پکیج</p>
+		<p>
+			صف ها</p>
+		<p>
+			محدود کردن</p>
+		<p>
+			برنامه ریزی صف</p>
+	</section>
+	<section id="">
+		<div class="page-header"><h3>امنیت</h3><hr class="notop"></div>
+		<p>
+			احراز هویت</p>
+		<p>
+			اجازه و اختیارها</p>
+		<p>
+			تایدیه با ایمیل</p>
+		<p>
+			رمز گذاری</p>
+		<p>
+			هش کردن</p>
+		<p>
+			ریست رمز</p>
+	</section>
+	<section id="">
+		<div class="page-header"><h3>بانک اطلاعاتی</h3><hr class="notop"></div>
+		<p>
+			شروع</p>
+		<p>
+			کوئری بیلدر</p>
+		<p>
+			صفحه بندی</p>
+		<p>
+			مایگریشن ها</p>
+		<p>
+			سید کردن</p>
+		<p>
+			ردیس</p>
+		<p>
+			&nbsp;</p>
+	</section>
+	<section id="">
+		<div class="page-header"><h3>بانک اطلاعاتی شیء گرا</h3><hr class="notop"></div>
+		<p>
+			شروع</p>
+		<p>
+			روابط</p>
+		<p>
+			کالکشن ها</p>
+		<p>
+			میوتیت ها و کستینگ</p>
+		<p>
+			API ریسورس ها</p>
+		<p>
+			سریالایزها</p>
+	</section>
+	<section id="">
+		<div class="page-header"><h3>تست</h3><hr class="notop"></div>
+		<p>
+			شروع</p>
+		<p>
+			تستهای HTTP</p>
+		<p>
+			تست های کنسول</p>
+		<p>
+			تستهای مرورگر</p>
+		<p>
+			بانک اطلاعاتی</p>
+		<p>
+			ماک کردن</p>
+	</section>
+	<section id="">
+		<div class="page-header"><h3>پکیج ها</h3><hr class="notop"></div>
+		<p>
+			Breeze</p>
+		<p>
+			Cashier (Stripe)</p>
+		<p>
+			Cashier (Paddle)</p>
+		<p>
+			Dusk</p>
+		<p>
+			Envoy</p>
+		<p>
+			Fortify</p>
+		<p>
+			Homestead</p>
+		<p>
+			Horizon</p>
+		<p>
+			Jetstream</p>
+		<p>
+			Mix</p>
+		<p>
+			Octane</p>
+		<p>
+			Passport</p>
+		<p>
+			Sail</p>
+		<p>
+			Sanctum</p>
+		<p>
+			Scout</p>
+		<p>
+			Socialite</p>
+		<p>
+			Telescope</p>
+		<p>
+			Valet</p>
+		<p>
+			&nbsp;</p>
+	</section>
+	<section id="test">
+		<div class="page-header"><h3>test</h3><hr class="notop"></div>
+		<p>
+			Start Here</p>
+	</section>
+
+</div>
+</body>
+</html>
